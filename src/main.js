@@ -8,6 +8,10 @@ Vue.config.productionTip = false
 import '@/styles/base.less'
 // 导入路由模块
 import router from '@/router'
+// 导入element模块
+import '@/plugins/ElementUI.js'
+// 导入axios模块
+import '@/utils/axios.js'
 
 new Vue({
   render: h => h(App),
