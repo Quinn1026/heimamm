@@ -12,8 +12,11 @@ import router from '@/router'
 import '@/plugins/ElementUI.js'
 // 导入axios模块
 import '@/utils/axios.js'
+// 导入vuex模块
+import store from '@/store'
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store
 }).$mount('#app')

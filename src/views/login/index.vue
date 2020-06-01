@@ -39,19 +39,26 @@
           <el-button type="primary" style="width:100%" @click="submitForm('loginForm')">登陆</el-button>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" style="width:100%">注册</el-button>
+          <el-button type="primary" style="width:100%" @click="register">注册</el-button>
         </el-form-item>
       </el-form>
     </div>
     <div class="right">
       <img src="@/assets/login_bg.png" alt />
     </div>
+    <!-- register子组件 -->
+    <register ref="register"></register>
   </div>
 </template>
 
 <script>
 import { setToken } from "@/utils/token.js";
+// 导入子组件register
+import register from "./register";
 export default {
+  components: {
+    register
+  },
   data() {
     return {
       codeURL: process.env.VUE_APP_BASEURL + "/captcha?type=login",
@@ -141,6 +148,9 @@ export default {
           }
         });
       });
+    },
+    register() {
+      this.$refs.register.dialogVisible = true;
     }
   }
 };
